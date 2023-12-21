@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using Salaries.Builders;
 using Salaries.Entities;
+using Salaries.Entities.NullEntities;
 
 namespace Salaries.DAO.MySql;
 
@@ -94,7 +95,7 @@ public class MySqlPeriodDao(MySqlConnectionProvider connectionProvider, IPeriodB
             command.Parameters.AddWithValue("@id", id);
             var reader = command.ExecuteReader();
             if (!reader.Read()) {
-                return _periodBuilder.Build();
+                return new NullPeriod();
             }
             _periodBuilder
                 .SetId(reader.GetInt32("id"))
@@ -119,7 +120,7 @@ public class MySqlPeriodDao(MySqlConnectionProvider connectionProvider, IPeriodB
             var reader = command.ExecuteReader();
             if (!reader.Read())
             {
-                return _periodBuilder.Build();
+                return new NullPeriod();
             }
 
             _periodBuilder

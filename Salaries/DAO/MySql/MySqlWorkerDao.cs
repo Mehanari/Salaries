@@ -1,6 +1,7 @@
 using MySql.Data.MySqlClient;
 using Salaries.Builders;
 using Salaries.Entities;
+using Salaries.Entities.NullEntities;
 
 namespace Salaries.DAO.MySql;
 
@@ -109,7 +110,7 @@ public class MySqlWorkerDao(MySqlConnectionProvider connectionProvider, IWorkerB
             var command = new MySqlCommand(GetWorkerByIdQuery, connection);
             command.Parameters.AddWithValue("@id", id);
             var reader = command.ExecuteReader();
-            if (!reader.Read()) return builder.Build();
+            if (!reader.Read()) return new NullWorker();
             builder
                 .SetId(reader.GetInt32("id"))
                 .SetPositionId(reader.GetInt32("positionId"))
@@ -135,7 +136,7 @@ public class MySqlWorkerDao(MySqlConnectionProvider connectionProvider, IWorkerB
             command.Parameters.AddWithValue("@surname", surname);
             command.Parameters.AddWithValue("@patronymic", patronymic);
             var reader = command.ExecuteReader();
-            if (!reader.Read()) return builder.Build();
+            if (!reader.Read()) return new NullWorker();
             builder
                 .SetId(reader.GetInt32("id"))
                 .SetPositionId(reader.GetInt32("positionId"))

@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using Salaries.Builders;
 using Salaries.Entities;
+using Salaries.Entities.NullEntities;
 
 namespace Salaries.DAO.MySql;
 
@@ -104,7 +105,7 @@ public class MySqlObjectiveDao(MySqlConnectionProvider connectionProvider, IObje
             var reader = command.ExecuteReader();
             if (!reader.Read())
             {
-                return builder.Build();
+                return new NullObjective();
             }
             builder
                 .SetId(reader.GetInt32("id"))

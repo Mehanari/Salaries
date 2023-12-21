@@ -1,7 +1,6 @@
-namespace Salaries.Entities.NullEntities
+namespace Salaries.Entities.NullEntities;
+
+public sealed class NullObjective() : Objective(0, "No Objective", "No Description")
 {
-    public sealed class NullObjective() : Objective(0, "No Objective", "No Description")
-    {
-        public override bool IsNull() => true;
-    }
+    public override bool IsNull() => true;
 }

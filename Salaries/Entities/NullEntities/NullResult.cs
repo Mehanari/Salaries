@@ -1,7 +1,6 @@
-namespace Salaries.Entities.NullEntities
+namespace Salaries.Entities.NullEntities;
+
+public sealed class NullResult() : Result(0, 0, 0, 0, 0)
 {
-    public sealed class NullResult() : Result(0, 0, 0, 0, 0)
-    {
-        public override bool IsNull() => true;
-    }
+    public override bool IsNull() => true;
 }

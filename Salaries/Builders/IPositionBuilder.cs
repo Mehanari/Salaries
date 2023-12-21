@@ -1,13 +1,13 @@
 using Salaries.Entities;
 
-namespace Salaries.Builders
+namespace Salaries.Builders;
+
+public interface IPositionBuilder
 {
-    public interface IPositionBuilder
-    {
-        IPositionBuilder SetId(int id);
-        IPositionBuilder SetName(string name);
-        IPositionBuilder SetSalary(decimal salary);
-        IPositionBuilder Reset();
-        Position Build();
-    }
+    IPositionBuilder SetId(int id);
+    IPositionBuilder SetName(string name);
+    IPositionBuilder SetRank(int rank);
+    IPositionBuilder SetSalary(decimal salary);
+    IPositionBuilder Reset();
+    Position Build();
 }

@@ -1,13 +1,12 @@
 using Salaries.Entities;
 
-namespace Salaries.Builders
+namespace Salaries.Builders;
+
+public interface IObjectiveBuilder
 {
-    public interface IObjectiveBuilder
-    {
-        IObjectiveBuilder SetId(int id);
-        IObjectiveBuilder SetName(string name);
-        IObjectiveBuilder SetDescription(string description);
-        IObjectiveBuilder Reset();
-        Objective Build();
-    }
+    IObjectiveBuilder SetId(int id);
+    IObjectiveBuilder SetName(string name);
+    IObjectiveBuilder SetDescription(string description);
+    IObjectiveBuilder Reset();
+    Objective Build();
 }

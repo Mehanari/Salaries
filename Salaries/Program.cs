@@ -101,7 +101,14 @@ internal class Program
                 ObjectivesMenu();
                 break;
             case 3:
-                return;
+                ResultsMenu();
+                break;
+            case 4:
+                PeriodsMenu();
+                break;
+            case 5:
+                PositionsMenu();
+                break;
         }
     }
     

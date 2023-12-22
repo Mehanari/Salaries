@@ -10,8 +10,8 @@ public class MySqlResultDao(MySqlConnectionProvider connectionProvider, IResultB
 {
     private const string GetAllResultsQuery = "SELECT * FROM result";
     private const string DeleteResultQuery = "DELETE FROM result WHERE id = @id";
-    private const string UpdateResultQuery = "UPDATE result SET workerId = @workerId, objectiveId = @objectiveId, periodId = @periodId, completion = @completion WHERE id = @id";
-    private const string AddResultQuery = "INSERT INTO result (workerId, objectiveId, periodId, completion) VALUES (@workerId, @objectiveId, @periodId, @completion)";
+    private const string UpdateResultQuery = "UPDATE result SET workerId = @workerId, objectiveId = @objectiveId, periodId = @periodId, `completion` = @completion WHERE id = @id";
+    private const string AddResultQuery = "INSERT INTO result (workerId, objectiveId, periodId, `completion`) VALUES (@workerId, @objectiveId, @periodId, @completion)";
     private const string GetResultByIdQuery = "SELECT * FROM result WHERE id = @id";
     private const string GetResultsByWorkerIdQuery = "SELECT * FROM result WHERE workerId = @workerId";
     

@@ -10,10 +10,10 @@ public class MySqlObjectiveDao(MySqlConnectionProvider connectionProvider, IObje
 {
     private const string GetAllObjectivesQuery = "SELECT * FROM objective";
     private const string DeleteObjectiveQuery = "DELETE FROM objective WHERE id = @id";
-    private const string UpdateObjectiveQuery = "UPDATE objective SET name = @name, description = @description WHERE id = @id";
-    private const string AddObjectiveQuery = "INSERT INTO objective (name, description) VALUES (@name, @description)";
+    private const string UpdateObjectiveQuery = "UPDATE objective SET `name` = @name, `description` = @description WHERE id = @id";
+    private const string AddObjectiveQuery = "INSERT INTO objective (`name`, `description`) VALUES (@name, @description)";
     private const string GetObjectiveByIdQuery = "SELECT * FROM objective WHERE id = @id";
-    private const string GetObjectiveByNameQuery = "SELECT * FROM objective WHERE name = @name";
+    private const string GetObjectiveByNameQuery = "SELECT * FROM objective WHERE `name` = @name";
 
     public List<Objective> GetAllObjectives()
     {

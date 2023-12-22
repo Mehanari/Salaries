@@ -10,10 +10,10 @@ public class MySqlWorkerDao(MySqlConnectionProvider connectionProvider, IWorkerB
 {
     private const string GetAllWorkersQuery = "SELECT * FROM worker";
     private const string DeleteWorkerQuery = "DELETE FROM worker WHERE id = @id";
-    private const string UpdateWorkerQuery = "UPDATE worker SET name = @name, surname = @surname, patronymic = @patronymic, positionId = @positionId WHERE id = @id";
-    private const string AddWorkerQuery = "INSERT INTO worker (name, surname, patronymic, positionId) VALUES (@name, @surname, @patronymic, @positionId)";
+    private const string UpdateWorkerQuery = "UPDATE worker SET `name` = @name, surname = @surname, patronymic = @patronymic, positionId = @positionId WHERE id = @id";
+    private const string AddWorkerQuery = "INSERT INTO worker (`name`, surname, patronymic, positionId) VALUES (@name, @surname, @patronymic, @positionId)";
     private const string GetWorkerByIdQuery = "SELECT * FROM worker WHERE id = @id";
-    private const string GetWorkerByFullnameQuery = "SELECT * FROM worker WHERE name = @name AND surname = @surname AND patronymic = @patronymic";
+    private const string GetWorkerByFullnameQuery = "SELECT * FROM worker WHERE `name` = @name AND surname = @surname AND patronymic = @patronymic";
 
 
     public List<Worker> GetAllWorkers()

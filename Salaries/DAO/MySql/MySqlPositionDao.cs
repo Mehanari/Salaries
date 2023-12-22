@@ -10,10 +10,10 @@ public class MySqlPositionDao(MySqlConnectionProvider connectionProvider, IPosit
 {
     private const string GetAllPositionsQuery = "SELECT * FROM position";
     private const string DeletePositionQuery = "DELETE FROM position WHERE id = @id";
-    private const string UpdatePositionQuery = "UPDATE position SET name = @name, rank = @rank, salary = @salary WHERE id = @id";
-    private const string AddPositionQuery = "INSERT INTO position (name, rank, salary) VALUES (@name, @rank, @salary)";
+    private const string UpdatePositionQuery = "UPDATE position SET `name` = @name, `rank` = @rank, salary = @salary WHERE id = @id";
+    private const string AddPositionQuery = "INSERT INTO position (`name`, `rank`, salary) VALUES (@name, @rank, @salary)";
     private const string GetPositionByIdQuery = "SELECT * FROM position WHERE id = @id";
-    private const string GetPositionByRankAndNameQuery = "SELECT * FROM position WHERE name = @name AND rank = @rank";
+    private const string GetPositionByRankAndNameQuery = "SELECT * FROM position WHERE `name` = @name AND `rank` = @rank";
 
     public List<Position> GetAllPositions()
     {

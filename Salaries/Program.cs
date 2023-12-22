@@ -245,7 +245,7 @@ internal class Program
         try
         {
             var result = _workerDao.AddWorker(worker);
-            Console.WriteLine(result.IsNull() ? "Worker was inserted." : "Worker was not inserted.");
+            Console.WriteLine(!result.IsNull() ? "Worker was inserted." : "Worker was not inserted.");
         }
         catch (Exception e)
         {
@@ -454,7 +454,7 @@ internal class Program
         try
         {
             var result = _objectiveDao.AddObjective(objective);
-            Console.WriteLine(result.IsNull() ? "Objective was inserted." : "Objective was not inserted.");
+            Console.WriteLine(!result.IsNull() ? "Objective was inserted." : "Objective was not inserted.");
         }
         catch (Exception e)
         {
@@ -661,7 +661,7 @@ internal class Program
         try
         {
             var isAdded = _resultDao.AddResult(result);
-            Console.WriteLine(isAdded.IsNull() ? "Result was inserted." : "Result was not inserted.");
+            Console.WriteLine(!isAdded.IsNull() ? "Result was inserted." : "Result was not inserted.");
         }
         catch (Exception e)
         {
@@ -872,7 +872,7 @@ internal class Program
         try
         {
             var result = _periodDao.AddPeriod(period);
-            Console.WriteLine(result.IsNull() ? "Period was inserted." : "Period was not inserted.");
+            Console.WriteLine(!result.IsNull() ? "Period was inserted." : "Period was not inserted.");
         }
         catch (Exception e)
         {
@@ -1081,7 +1081,7 @@ internal class Program
         try
         {
             var result = _positionDao.AddPosition(position);
-            Console.WriteLine(result.IsNull() ? "Position was inserted." : "Position was not inserted.");
+            Console.WriteLine(!result.IsNull() ? "Position was inserted." : "Position was not inserted.");
         }
         catch (Exception e)
         {
